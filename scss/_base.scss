@@ -90,7 +90,7 @@ i, em {
 }
 
 b, strong {
-    @include body-font-bold;
+    //;
 }
 
 a {
@@ -145,12 +145,12 @@ blockquote p {
 
 blockquote cite {
     display: block;
-    @include body-font-bold;
+    @include body-font-italic;
     text-align: right;
 }
 
 dt {
-    @include body-font-bold; 
+    @include body-font-italic; 
 }
 
 dd {
