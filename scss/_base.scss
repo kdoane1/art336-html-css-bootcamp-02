@@ -1,0 +1,182 @@
+/* 
+Base Rules
+	A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudoclasses. It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+*/
+html {
+    box-sizing: border-box;
+}
+
+*,*:before, *:after {
+    box-sizing: inherit;
+}
+
+main {
+    padding: 0 20px;
+}
+    
+body {
+    color: $color;
+    //font-family: 'Open Sans', sans-serif;
+    @include body-font-regular;
+    //font-size: 20px;
+    @include fontSize(18px);
+    line-height: 1.45;
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    //font-family: 'Open Sans Condensed', sans-serif;
+    @include headline-font;
+    line-height: 1;
+}
+
+h1 {
+    @include fontSize(70px);
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    margin-top: 0;
+}
+
+//p:first-of-type {
+//    @include fontSize(30px);
+//}
+
+//p:first-child {
+//    @include fontSize(30px);
+//}
+
+h1 + p {
+    @include fontSize(25px);
+    margin: 0;
+}
+
+h2 {
+    @include fontSize(40px);
+    margin-top: 30px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    //border-bottom: 1px solid $color;
+}
+
+h2 + p {
+    margin-top: 0;
+}
+
+h3 {
+    @include fontSize(30px);
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+h3 + p {
+    margin-top: 0;
+}
+
+h4 {
+    @include fontSize(20px);
+    margin-top: 34px;
+    margin-bottom: 4px;
+}
+
+h4 + p {
+    margin-top: 0;
+}
+
+i, em {
+    @include body-font-italic; 
+}
+
+b, strong {
+    @include body-font-bold;
+}
+
+a {
+    background-color: $background-color;
+    border-radius: 4px;
+    color: $color;
+    @include body-font-italic;
+    padding: 0 4px 2px 4px;
+    transition: background-color 300ms linear;
+    transition: color 300ms linear;
+}
+
+a:hover {
+    background-color: lighten($background-color, 5%);
+    color: lighten($color, 40%);
+    transition: background-color 300ms linear;
+    transition: color 300ms linear;
+}
+
+ul {
+    margin: 0 0 0 22px;
+    padding: 0;
+}
+
+ol {
+    list-style-type: decimal-leading-zero;
+    margin: 0 0 0 40px;
+    padding: 0;
+}
+
+ol li {
+    margin-bottom: 8px;
+}
+
+p + ul, p + ol {
+    margin-top: -18px;
+}
+
+blockquote {
+    //background-color: $blockquote-color;
+    //color: $blockquote-font-color;
+    border-top: 3px $blockquote-color solid;
+    border-bottom: 3px $blockquote-color solid;
+    padding: 16px;
+    margin: 0;
+    @include fontSize(25px);
+}
+
+blockquote p {
+    margin-top: 0;
+}
+
+blockquote cite {
+    display: block;
+    @include body-font-bold;
+    text-align: right;
+}
+
+dt {
+    @include body-font-bold; 
+}
+
+dd {
+    margin: 0 0 10px 0;
+    @include fontSize(15px);
+}
+
+footer {
+    border:block;
+    border-top: 1px navy solid;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+small {
+    @include fontSize(14px);
+    line-height: 1;
+    margin-top: 0;
+}
+
+i {
+    @include body-font-italic;
+}
+
+img {
+    width: 100%;
+    max-width: 540px;
+
+}
